@@ -84,19 +84,20 @@ def Show_Tasks():
 # Create the main window
 root = tk.Tk()
 root.title("Task Manager")
+root.minsize(400,300)
 root.configure(bg="#edebeb")
 root.columnconfigure(0, weight=1, minsize=75)
 root.rowconfigure(list(range(1, 4)), weight=1, minsize=50)
 
 # Create the widgets
 task_label = tk.Label(root, background="#edebeb", text="Task name:")
-task_entry = tk.Entry(root, width=30, text="Enter a task name")
+task_entry = tk.Entry(root, width=30)
 add_button = tk.Button(root, text="Add", background="white", command=Add_Task)
 task_listbox = tk.Listbox(root, height=10, width=50, foreground="white", background="#666666")
-done_button = tk.Button(root, text="Mark as done", background="white", command=Done_Task)
-delete_button = tk.Button(root, text="Delete", background="white", command=Delete_Task)
+done_button = tk.Button(root, text="Mark as done", height=1, width=12,background="white", command=Done_Task)
+delete_button = tk.Button(root, text="Delete", height=1, width=12,background="white", command=Delete_Task)
 status_label = tk.Label(root, text="", background="#edebeb", wraplength=100)
-history_button = tk.Button(root, text="Show history", background="white", command=History_Data)
+history_button = tk.Button(root, text="Show history", height=1, width=12, background="white", command=History_Data)
 completed_listbox = tk.Listbox(root, height=11, width=30)
 deleted_listbox = tk.Listbox(root, height=11, width=30)
 
